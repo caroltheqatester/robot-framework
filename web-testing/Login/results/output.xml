@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230529 23:47:26.779" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Test" source="C:\Users\carol\OneDrive\Documents\projects\robot-framework\web-testing\Login\login_test.robot">
+<test id="s1-t1" name="Scenario: Test Case #1: Positive Login with username and password" line="8">
+<kw name="Open the browser" library="login_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230529 23:47:27.090" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230529 23:47:27.089" endtime="20230529 23:47:29.208"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230529 23:47:29.208" endtime="20230529 23:47:29.350"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:27.089" endtime="20230529 23:47:29.351"/>
+</kw>
+<kw name="Given I'm on the Swag Lab Login page" library="login_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230529 23:47:29.352" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20230529 23:47:29.352" endtime="20230529 23:47:30.215"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${SWAG_LAB_LOGO_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230529 23:47:30.216" endtime="20230529 23:47:30.287"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:29.351" endtime="20230529 23:47:30.287"/>
+</kw>
+<kw name="When I enter the username and the password" library="login_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${USERNAME_INPUT_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:30.290" level="INFO">Clicking element '//input[contains(@placeholder,'Username')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:30.289" endtime="20230529 23:47:30.409"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=user-name</arg>
+<arg>text=${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:30.410" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
+<status status="PASS" starttime="20230529 23:47:30.409" endtime="20230529 23:47:30.586"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${PASSWORD_INPUT_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:30.586" level="INFO">Clicking element '//input[contains(@placeholder,'Password')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:30.586" endtime="20230529 23:47:30.666"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=password</arg>
+<arg>password=${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:30.668" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230529 23:47:30.717" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230529 23:47:30.785" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230529 23:47:30.666" endtime="20230529 23:47:30.785"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:30.288" endtime="20230529 23:47:30.786"/>
+</kw>
+<kw name="And I click on the Login button" library="login_resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${LOGIN_BUTTON_XPATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:30.788" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:30.787" endtime="20230529 23:47:30.978"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:30.786" endtime="20230529 23:47:30.978"/>
+</kw>
+<kw name="Then I should Successfully logging into the system" library="login_resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${PRODUCT_SPAN_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230529 23:47:30.980" endtime="20230529 23:47:31.046"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:30.979" endtime="20230529 23:47:31.047"/>
+</kw>
+<kw name="Close the browser" library="login_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230529 23:47:31.263" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230529 23:47:31.048" endtime="20230529 23:47:31.263"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230529 23:47:31.263" endtime="20230529 23:47:33.627"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:31.048" endtime="20230529 23:47:33.627"/>
+</kw>
+<doc>This case tests the positive login of Swag Lab page</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20230529 23:47:27.088" endtime="20230529 23:47:33.627"/>
+</test>
+<test id="s1-t2" name="Scenario: Test Case #2: Negative Login with username only" line="16">
+<kw name="Open the browser" library="login_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230529 23:47:33.627" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230529 23:47:33.627" endtime="20230529 23:47:35.536"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230529 23:47:35.536" endtime="20230529 23:47:35.679"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:33.627" endtime="20230529 23:47:35.679"/>
+</kw>
+<kw name="Given I'm on the Swag Lab Login page" library="login_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230529 23:47:35.679" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20230529 23:47:35.679" endtime="20230529 23:47:36.339"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${SWAG_LAB_LOGO_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230529 23:47:36.339" endtime="20230529 23:47:36.397"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:35.679" endtime="20230529 23:47:36.397"/>
+</kw>
+<kw name="When I enter the username" library="login_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${USERNAME_INPUT_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:36.397" level="INFO">Clicking element '//input[contains(@placeholder,'Username')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:36.397" endtime="20230529 23:47:36.508"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=user-name</arg>
+<arg>text=${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:36.508" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
+<status status="PASS" starttime="20230529 23:47:36.508" endtime="20230529 23:47:36.686"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:36.397" endtime="20230529 23:47:36.686"/>
+</kw>
+<kw name="And I click on the Login button" library="login_resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${LOGIN_BUTTON_XPATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:36.686" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:36.686" endtime="20230529 23:47:36.818"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:36.686" endtime="20230529 23:47:36.818"/>
+</kw>
+<kw name="Then I should see the password missing error message" library="login_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${PASSWORD_REQUIRED_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230529 23:47:36.820" endtime="20230529 23:47:36.861"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:36.820" endtime="20230529 23:47:36.861"/>
+</kw>
+<kw name="Close the browser" library="login_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230529 23:47:37.027" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230529 23:47:36.867" endtime="20230529 23:47:37.027"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230529 23:47:37.027" endtime="20230529 23:47:39.385"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:36.866" endtime="20230529 23:47:39.385"/>
+</kw>
+<doc>This case tests when trying to login with the username only</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20230529 23:47:33.627" endtime="20230529 23:47:39.386"/>
+</test>
+<test id="s1-t3" name="Scenario: Test Case #3: Negative Login with password only" line="24">
+<kw name="Open the browser" library="login_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230529 23:47:39.390" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230529 23:47:39.390" endtime="20230529 23:47:41.255"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230529 23:47:41.255" endtime="20230529 23:47:41.394"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:39.390" endtime="20230529 23:47:41.394"/>
+</kw>
+<kw name="Given I'm on the Swag Lab Login page" library="login_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230529 23:47:41.394" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20230529 23:47:41.394" endtime="20230529 23:47:42.005"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${SWAG_LAB_LOGO_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230529 23:47:42.005" endtime="20230529 23:47:42.079"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:41.394" endtime="20230529 23:47:42.079"/>
+</kw>
+<kw name="When I enter the password" library="login_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${PASSWORD_INPUT_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:42.082" level="INFO">Clicking element '//input[contains(@placeholder,'Password')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:42.080" endtime="20230529 23:47:42.185"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=password</arg>
+<arg>password=${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:42.185" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230529 23:47:42.259" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230529 23:47:42.344" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230529 23:47:42.185" endtime="20230529 23:47:42.344"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:42.080" endtime="20230529 23:47:42.345"/>
+</kw>
+<kw name="And I click on the Login button" library="login_resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${LOGIN_BUTTON_XPATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:42.347" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:42.346" endtime="20230529 23:47:42.461"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:42.346" endtime="20230529 23:47:42.462"/>
+</kw>
+<kw name="Then I should see the username missing error message" library="login_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${USERNAME_REQUIRED_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230529 23:47:42.464" endtime="20230529 23:47:42.512"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:42.463" endtime="20230529 23:47:42.515"/>
+</kw>
+<kw name="Close the browser" library="login_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230529 23:47:42.641" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230529 23:47:42.517" endtime="20230529 23:47:42.641"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230529 23:47:42.641" endtime="20230529 23:47:44.949"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:42.516" endtime="20230529 23:47:44.949"/>
+</kw>
+<doc>This case tests when trying to login with the password only</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20230529 23:47:39.386" endtime="20230529 23:47:44.949"/>
+</test>
+<test id="s1-t4" name="Scenario: Test Case #4: Negative Login with wrong username" line="32">
+<kw name="Open the browser" library="login_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230529 23:47:44.956" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230529 23:47:44.955" endtime="20230529 23:47:46.822"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230529 23:47:46.822" endtime="20230529 23:47:46.957"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:44.955" endtime="20230529 23:47:46.957"/>
+</kw>
+<kw name="Given I'm on the Swag Lab Login page" library="login_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230529 23:47:46.957" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20230529 23:47:46.957" endtime="20230529 23:47:47.497"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${SWAG_LAB_LOGO_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230529 23:47:47.497" endtime="20230529 23:47:47.559"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:46.957" endtime="20230529 23:47:47.560"/>
+</kw>
+<kw name="When I enter the wrong username" library="login_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${USERNAME_INPUT_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:47.562" level="INFO">Clicking element '//input[contains(@placeholder,'Username')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:47.561" endtime="20230529 23:47:47.639"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=user-name</arg>
+<arg>text=${WRONG_USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:47.641" level="INFO">Typing text 'locked_out' into text field 'user-name'.</msg>
+<status status="PASS" starttime="20230529 23:47:47.639" endtime="20230529 23:47:47.801"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:47.560" endtime="20230529 23:47:47.803"/>
+</kw>
+<kw name="And I enter the password" library="login_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${PASSWORD_INPUT_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:47.805" level="INFO">Clicking element '//input[contains(@placeholder,'Password')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:47.804" endtime="20230529 23:47:47.887"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=password</arg>
+<arg>password=${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:47.889" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230529 23:47:47.952" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230529 23:47:48.037" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230529 23:47:47.887" endtime="20230529 23:47:48.037"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:47.803" endtime="20230529 23:47:48.038"/>
+</kw>
+<kw name="And I click on the Login button" library="login_resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${LOGIN_BUTTON_XPATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:48.043" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:48.041" endtime="20230529 23:47:48.156"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:48.038" endtime="20230529 23:47:48.156"/>
+</kw>
+<kw name="Then I should see the wrong data error message" library="login_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${LOGIN_ERROR_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230529 23:47:48.156" endtime="20230529 23:47:48.183"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:48.156" endtime="20230529 23:47:48.183"/>
+</kw>
+<kw name="Close the browser" library="login_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230529 23:47:48.320" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230529 23:47:48.185" endtime="20230529 23:47:48.320"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230529 23:47:48.320" endtime="20230529 23:47:50.611"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:48.184" endtime="20230529 23:47:50.611"/>
+</kw>
+<doc>This case tests for incorrect username when logging in</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20230529 23:47:44.949" endtime="20230529 23:47:50.611"/>
+</test>
+<test id="s1-t5" name="Scenario: Test Case #5: Negative Login with wrong password" line="41">
+<kw name="Open the browser" library="login_resources" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230529 23:47:50.616" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230529 23:47:50.616" endtime="20230529 23:47:52.409"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230529 23:47:52.410" endtime="20230529 23:47:52.550"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:50.611" endtime="20230529 23:47:52.550"/>
+</kw>
+<kw name="Given I'm on the Swag Lab Login page" library="login_resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230529 23:47:52.550" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20230529 23:47:52.550" endtime="20230529 23:47:53.369"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=${SWAG_LAB_LOGO_XPATH}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230529 23:47:53.369" endtime="20230529 23:47:53.431"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:52.550" endtime="20230529 23:47:53.431"/>
+</kw>
+<kw name="When I enter the username" library="login_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${USERNAME_INPUT_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:53.431" level="INFO">Clicking element '//input[contains(@placeholder,'Username')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:53.431" endtime="20230529 23:47:53.544"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=user-name</arg>
+<arg>text=${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:53.547" level="INFO">Typing text 'standard_user' into text field 'user-name'.</msg>
+<status status="PASS" starttime="20230529 23:47:53.544" endtime="20230529 23:47:53.716"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:53.431" endtime="20230529 23:47:53.716"/>
+</kw>
+<kw name="And I enter the wrong password" library="login_resources">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=${PASSWORD_INPUT_XPATH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:53.716" level="INFO">Clicking element '//input[contains(@placeholder,'Password')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:53.716" endtime="20230529 23:47:53.797"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>locator=password</arg>
+<arg>password=${WRONG_PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:53.798" level="INFO">Typing password into text field 'password'.</msg>
+<msg timestamp="20230529 23:47:53.847" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230529 23:47:53.915" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230529 23:47:53.797" endtime="20230529 23:47:53.915"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:53.716" endtime="20230529 23:47:53.916"/>
+</kw>
+<kw name="And I click on the Login button" library="login_resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=${LOGIN_BUTTON_XPATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230529 23:47:53.917" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
+<status status="PASS" starttime="20230529 23:47:53.917" endtime="20230529 23:47:54.031"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:53.916" endtime="20230529 23:47:54.031"/>
+</kw>
+<kw name="Then I should see the wrong data error message" library="login_resources">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>text=${LOGIN_ERROR_MESSAGE}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230529 23:47:54.033" endtime="20230529 23:47:54.059"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:54.031" endtime="20230529 23:47:54.059"/>
+</kw>
+<kw name="Close the browser" library="login_resources" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230529 23:47:54.199" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230529 23:47:54.062" endtime="20230529 23:47:54.199"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230529 23:47:54.199" endtime="20230529 23:47:56.519"/>
+</kw>
+<status status="PASS" starttime="20230529 23:47:54.061" endtime="20230529 23:47:56.520"/>
+</kw>
+<doc>This case tests for incorrect password when logging in</doc>
+<tag>Login</tag>
+<status status="PASS" starttime="20230529 23:47:50.611" endtime="20230529 23:47:56.520"/>
+</test>
+<doc>This suite tests Login on Swag Lab website</doc>
+<status status="PASS" starttime="20230529 23:47:26.782" endtime="20230529 23:47:56.523"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="5" fail="0" skip="0">Login</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Login Test">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
