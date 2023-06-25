@@ -1,28 +1,7 @@
 *** Settings ***
 Library                              SeleniumLibrary
-
-*** Variables ***
-${BROWSER}                           chrome
-${URL}                               https://www.saucedemo.com/
-${SWAG_LAB_LOGO_XPATH}               //div[@class='login_logo'][contains(.,'Swag Labs')]
-${USERNAME_INPUT_XPATH}              //input[contains(@placeholder,'Username')]
-${USERNAME}                          standard_user
-${PASSWORD_INPUT_XPATH}              //input[contains(@placeholder,'Password')]
-${PASSWORD}                          secret_sauce
-${LOGIN_BUTTON_XPATH}                //input[contains(@type,'submit')]
-${PRODUCT_SPAN_XPATH}                //span[@class='title'][contains(.,'Products')]
-
-${WRONG_USERNAME}                    locked_out
-${WRONG_PASSWORD}                    wrong_pass
-${LOGIN_ERROR_MESSAGE}               Epic sadface: Username and password do not match any user in this service
-
-${USERNAME_REQUIRED_MESSAGE}            Epic sadface: Username is required
-${PASSWORD_REQUIRED_MESSAGE}            Epic sadface: Password is required
-
-
-
-${CATEGORY_VENDA_H1_TRUE_PATH}       //h1[@class='heading align-start font-size-xxlarge color-squid-ink ember font-heavy'][contains(.,'Venda na Amazon com mensalidade GRÁTIS por 1 ano')]
-
+Resource                             ../../Global/Variables/global_variables.robot
+Resource                             ./login_variables.robot
 
 *** Keywords ***
 Open the browser
@@ -40,7 +19,7 @@ Given I'm on the Swag Lab Login page
 
 When I enter the username and the password
     Click Element                    locator=${USERNAME_INPUT_XPATH}
-    Input Text                       locator=user-name    text=${USERNAME}
+    Input Text                       locator=user-name    text=${USERNAME[0]}
     Click Element                    locator=${PASSWORD_INPUT_XPATH}
     Input Password                   locator=password    password=${PASSWORD}
 
